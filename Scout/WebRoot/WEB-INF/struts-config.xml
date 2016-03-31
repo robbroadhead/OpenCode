@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+		<form-bean name="LoginForm" type="com.sns.scout.form.LoginForm"/>
+		<form-bean name="ProjectForm" type="com.sns.scout.form.ProjectForm"/>
+		<form-bean name="TaskForm" type="com.sns.scout.form.TaskForm"/>
+		<form-bean name="UserForm" type="com.sns.scout.form.UserForm"/>
+		<form-bean name="GroupForm" type="com.sns.scout.form.GroupForm"/>
+  </form-beans>
+  <global-exceptions />
+  <global-forwards>
+		<forward name="scout" path="/Scout.do"/>
+  </global-forwards>
+  <action-mappings>
+		<action path="/Scout" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/pages/ScoutHome.jsp"/>
+		<action path="/ScoutMain" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/pages/ScoutMain.jsp"/>
+		<!-- Login -->
+		<action path="/Login" type="com.sns.scout.struts.action.LogonAction" name="LoginForm" scope="session" validate="true" input="/WEB-INF/pages/ScoutHome.jsp">
+			<forward name="success" path="/ScoutMain.do"/>
+			<forward name="failure" path="/WEB-INF/pages/ScoutHome.jsp"/>
+		</action>
+		<!-- Logout -->
+		<action path="/Logout" type="com.sns.scout.struts.action.LogoutAction">
+			<forward name="success" path="/Scout.do"/>
+		</action>
+		<!-- Project Actions -->
+		<action path="/Project" type="com.sns.scout.struts.action.ProjectAction" name="ProjectForm" scope="session" validate="true" input="/WEB-INF/pages/ProjectEdit.jsp">
+			<forward name="success" path="/ScoutMain.do"/>
+			<forward name="failure" path="/WEB-INF/pages/ProjectEdit.jsp"/>
+		</action>
+		<action path="/ProjectDelete" type="com.sns.scout.struts.action.ProjectDeleteAction" scope="request">
+			<forward name="success" path="/ProjectFind.do"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/ProjectFind" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/ProjectResults.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/ProjectStats" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/ProjectStats.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/ProjectEdit" type="com.sns.scout.struts.action.SecureProjectAction" name="ProjectForm" scope="session" validate="true" input="/WEB-INF/pages/ProjectEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/ProjectEdit.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<!-- User Actions -->
+		<action path="/User" type="com.sns.scout.struts.action.UserAction" name="UserForm" scope="request" validate="true" input="/WEB-INF/pages/UserEdit.jsp">
+			<forward name="success" path="/ScoutMain.do"/>
+			<forward name="failure" path="/WEB-INF/pages/UserEdit.jsp"/>
+		</action>
+		<action path="/UserEdit" type="com.sns.scout.struts.action.SecureUserAction" name="UserForm" scope="request" validate="no" input="/WEB-INF/pages/UserEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/UserEdit.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/UserList" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/UserResults.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<!-- Group Actions -->
+		<action path="/Group" type="com.sns.scout.struts.action.GroupAction" name="GroupForm" scope="request" validate="no" input="/WEB-INF/pages/GroupEdit.jsp">
+			<forward name="success" path="/ScoutMain.do"/>
+			<forward name="failure" path="/WEB-INF/pages/GroupEdit.jsp"/>
+		</action>
+		<action path="/GroupEdit" type="com.sns.scout.struts.action.SecureGroupAction" name="GroupForm" scope="request" validate="no" input="/WEB-INF/pages/GroupEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/GroupEdit.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/GroupList" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/GroupResults.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<!-- Task Actions -->
+		<action path="/Task" type="com.sns.scout.struts.action.TaskAction" name="TaskForm" scope="session" validate="true" input="/WEB-INF/pages/TaskEdit.jsp">
+			<forward name="success" path="/ProjectEdit.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/TaskEdit.jsp"/>
+		</action>
+		<action path="/LTask" type="com.sns.scout.struts.action.TaskAction" name="TaskForm" scope="request" validate="true" input="/WEB-INF/pages/TaskEdit.jsp">
+			<forward name="success" path="/TaskList.do"/>
+			<forward name="failure" path="/WEB-INF/pages/TaskEdit.jsp"/>
+		</action>
+		<action path="/TaskDelete" type="com.sns.scout.struts.action.TaskDeleteAction" scope="request">
+			<forward name="success" path="/TaskFind.do"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/TaskFind" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/TaskResults.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/TaskList" type="com.sns.scout.struts.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/MyTaskResults.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>
+		<action path="/TaskEdit" type="com.sns.scout.struts.action.SecureTaskAction" name="TaskForm" scope="request" validate="true" input="/WEB-INF/pages/TaskEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/TaskEdit.jsp"/>
+			<forward name="failure" path="/Scout.do"/>
+		</action>		
+  </action-mappings>
+  <message-resources parameter="com.sns.scout.struts.ApplicationResources" />
+</struts-config>
+

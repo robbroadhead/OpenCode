@@ -1,0 +1,5 @@
+#Sqlfile -> Database map
+#Sun Dec 12 11:27:31 CST 2004
+HungryMutt-schema-idtable-init.sql=hungrymutt
+HungryMutt-schema.sql=hungrymutt
+id-table-schema.sql=@DATABASE_DEFAULT@

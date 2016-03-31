@@ -1,0 +1,161 @@
+<html {$html_attrs}>
+<head>
+<title>Tax Summary</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+.grid_block {  
+margin-top:5px;
+border-collapse: collapse;
+align:center;
+width:95%;
+border:none;
+} 
+.grid_block td { 
+ padding: 5px; 
+ margin: 0px; 
+ border: solid black 1px;
+}
+.grid_block .gridspacing {width:20px;border-top-color:white; border-bottom-color:white;background-color:white}
+@media print 
+{
+	a.pdf {display:none}
+}
+.printpage {page-break-after:always}
+#selpage{margin-left:30px;}
+</style> 
+</head>
+<body style="background-color:white">
+{BEGIN body}
+{$header}
+{BEGIN page}
+{BEGIN mastertable_block}
+<div id="mastertable_block">
+{$showmasterfile}
+</div>
+{END mastertable_block}
+
+<h1>Tax Summary</h1>
+{BEGIN page_number}
+<div id='selpage'>Page {$pageno} of {$maxpages} </div>
+{END page_number}
+
+{BEGIN grid_block}
+
+<table align="center" cellpadding=5 class="grid_block">
+{BEGIN grid_header}
+<tr>
+{BEGIN record_header}
+{BEGIN Entries_fieldheadercolumn}
+	<td>
+{BEGIN Entries_fieldheader}
+	<b>Entry Count</b>
+{END Entries_fieldheader}
+	</td>
+{END Entries_fieldheadercolumn}
+{BEGIN Amount_fieldheadercolumn}
+	<td>
+{BEGIN Amount_fieldheader}
+	<b>Amount</b>
+{END Amount_fieldheader}
+	</td>
+{END Amount_fieldheadercolumn}
+{BEGIN monthname_fieldheadercolumn}
+	<td>
+{BEGIN monthname_fieldheader}
+	<b>Month</b>
+{END monthname_fieldheader}
+	</td>
+{END monthname_fieldheadercolumn}
+{BEGIN year_fieldheadercolumn}
+	<td>
+{BEGIN year_fieldheader}
+	<b>Year</b>
+{END year_fieldheader}
+	</td>
+{END year_fieldheadercolumn}
+{BEGIN endrecordheader_block}
+	<td class="gridspacing">&nbsp;</td>
+{END endrecordheader_block}
+{END record_header}
+</tr>
+{END grid_header}
+{BEGIN grid_row}
+<tr valign=top {$rowstyle} {$rowattrs}>
+{BEGIN grid_record}
+{BEGIN Entries_fieldcolumn}
+<td {$Entries_style}>
+{$Entries_value}
+</td>
+{END Entries_fieldcolumn}
+{BEGIN Amount_fieldcolumn}
+<td {$Amount_style}>
+{$Amount_value}
+</td>
+{END Amount_fieldcolumn}
+{BEGIN monthname_fieldcolumn}
+<td {$monthname_style}>
+{$monthname_value}
+</td>
+{END monthname_fieldcolumn}
+{BEGIN year_fieldcolumn}
+<td {$year_style}>
+{$year_value}
+</td>
+{END year_fieldcolumn}
+{BEGIN endrecord_block}
+<td class="gridspacing">&nbsp;</td>
+{END endrecord_block}
+{END grid_record}
+</tr>
+{END grid_row}
+<!-- totals row -->
+{BEGIN totals_row}
+<tr>
+{BEGIN Entries_fieldfootercolumn}
+<td>
+{BEGIN Entries_showtotal}
+	<b>
+					Total:
+					{$Entries_total}
+	</b>
+{END Entries_showtotal}
+</td>
+{END Entries_fieldfootercolumn}
+{BEGIN Amount_fieldfootercolumn}
+<td>
+{BEGIN Amount_showtotal}
+	<b>
+					Total:
+					{$Amount_total}
+	</b>
+{END Amount_showtotal}
+</td>
+{END Amount_fieldfootercolumn}
+{BEGIN monthname_fieldfootercolumn}
+<td>
+{BEGIN monthname_showtotal}
+	<b>
+					</b>
+{END monthname_showtotal}
+</td>
+{END monthname_fieldfootercolumn}
+{BEGIN year_fieldfootercolumn}
+<td>
+{BEGIN year_showtotal}
+	<b>
+					</b>
+{END year_showtotal}
+</td>
+{END year_fieldfootercolumn}
+</tr>
+{END totals_row}
+</table>
+{END grid_block}
+{END page}
+{$footer}
+{END body}
+</body>
+</html>

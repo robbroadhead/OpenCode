@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="CommentsForm"
+			type="com.sns.teammgr.form.CommentsForm" />
+		<form-bean name="EventForm"
+			type="com.sns.teammgr.form.EventForm" />
+		<form-bean name="GameForm" type="com.sns.teammgr.form.GameForm" />
+		<form-bean name="LinkForm" type="com.sns.teammgr.form.LinkForm" />
+		<form-bean name="LoginForm"
+			type="com.sns.teammgr.form.LoginForm" />
+		<form-bean name="MessageForm"
+			type="com.sns.teammgr.form.MessageForm" />
+		<form-bean name="PlayerForm"
+			type="com.sns.teammgr.form.PlayerForm" />
+		<form-bean name="PointsForm"
+			type="com.sns.teammgr.form.PointsForm" />
+		<form-bean name="TeamForm" type="com.sns.teammgr.form.TeamForm" />
+	</form-beans>
+	<global-exceptions />
+	<global-forwards>
+		<forward name="teammgr" path="/TeamManager.do" />
+		<forward name="home" path="/MgrHome.do" />
+	</global-forwards>
+  <action-mappings>
+		<action path="/TeamManager" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/pages/ManagerHome.jsp"/>
+		<action path="/MgrHome" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/pages/ManagerLogin.jsp"/>
+		<action path="/PublicGameView" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/pages/ExtGameSummary.jsp"/>
+		<!-- Login -->
+		<action path="/Login" type="com.sns.teammgr.action.LogonAction" name="LoginForm" scope="request" validate="true" input="/WEB-INF/pages/ManagerLogin.jsp">
+			<forward name="success" path="/MemberTeamView.do"/>
+			<forward name="admin" path="/AdminTeamView.do"/>
+			<forward name="failure" path="/WEB-INF/pages/ManagerLogin.jsp"/>
+		</action>
+		<!-- Logout -->
+		<action path="/Logout" type="com.sns.teammgr.action.LogoutAction">
+			<forward name="success" path="/MgrHome.do"/>
+		</action>
+		<!--Team Actions -->
+		<action path="/Team" type="com.sns.teammgr.action.TeamAction" name="TeamForm" scope="request" validate="true" input="/WEB-INF/pages/TeamEdit.jsp">
+			<forward name="success" path="/MemberTeamView.do?id=-1"/>
+			<forward name="admin" path="/AdminTeamView.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/TeamEdit.jsp"/>
+		</action>
+		<action path="/TeamAdd" type="com.sns.teammgr.action.TeamAddAction" name="TeamForm" scope="request" validate="true" input="/WEB-INF/pages/TeamAdd.jsp">
+			<forward name="success" path="/AdminTeamView.do"/>
+			<forward name="failure" path="/WEB-INF/pages/TeamEdit.jsp"/>
+		</action>
+		<action path="/TeamDelete" type="com.sns.teammgr.action.TeamDeleteAction" scope="request">
+			<forward name="success" path="/TeamFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/TeamFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/TeamResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/TeamList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/TeamResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/TeamEdit" type="com.sns.teammgr.action.SecureTeamAction" name="TeamForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/TeamEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/NewTeam" type="com.sns.teammgr.action.SecureAction" name="TeamForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/TeamAdd.jsp"/>
+			<forward name="failure" path="/WEB-INF/pages/TeamAdd.jsp"/>
+		</action>
+		<action path="/PublicTeamView" type="com.sns.teammgr.action.PublicTeamAction" name="TeamForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/ExtTeamView.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/AdminTeamView" type="com.sns.teammgr.action.SecureTeamAction" name="TeamForm" scope="request" input="/WEB-INF/pages/AdminTeamView.jsp" validate="false">
+			<forward name="success" path="/WEB-INF/pages/AdminTeamView.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/MemberTeamView" type="com.sns.teammgr.action.SecureTeamAction" name="TeamForm" scope="request" input="/WEB-INF/pages/AdminTeamView.jsp" validate="false">
+			<forward name="success" path="/WEB-INF/pages/MemberTeamView.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Game Actions -->
+		<action path="/Game" type="com.sns.teammgr.action.GameAction" name="GameForm" scope="request" validate="true" input="/WEB-INF/pages/GameEdit.jsp">
+			<forward name="success" path="/MemberTeamView.do"/>
+			<forward name="admin" path="/AdminTeamView.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/GameEdit.jsp"/>
+		</action>
+		<action path="/GameDelete" type="com.sns.teammgr.action.GameDeleteAction" scope="request">
+			<forward name="success" path="/GameFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/GameFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/GameResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/GameList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/GameResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/GameEdit" type="com.sns.teammgr.action.SecureGameAction" name="GameForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/GameEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/GameView" type="com.sns.teammgr.action.SecureGameAction" name="GameForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/GameView.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Event Actions -->
+		<action path="/Event" type="com.sns.teammgr.action.EventAction" name="EventForm" scope="request" validate="true" input="/WEB-INF/pages/EventEdit.jsp">
+			<forward name="success" path="/MemberTeamView.do?id=-1"/>
+			<forward name="admin" path="/AdminTeamView.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/EventEdit.jsp"/>
+		</action>
+		<action path="/EventDelete" type="com.sns.teammgr.action.EventDeleteAction" scope="request">
+			<forward name="success" path="/EventFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/EventFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/EventResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/EventList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/EventResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/EventEdit" type="com.sns.teammgr.action.SecureEventAction" name="EventForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/EventEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Player Actions -->
+		<action path="/Player" type="com.sns.teammgr.action.PlayerAction" name="PlayerForm" scope="request" validate="true" input="/WEB-INF/pages/PlayerEdit.jsp">
+			<forward name="success" path="/MemberTeamView.do?id=-1"/>
+			<forward name="admin" path="/AdminTeamView.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/PlayerEdit.jsp"/>
+		</action>
+		<action path="/PlayerDelete" type="com.sns.teammgr.action.PlayerDeleteAction" scope="request">
+			<forward name="success" path="/PlayerFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PlayerFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/PlayerResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PlayerList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/PlayerResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PlayerEdit" type="com.sns.teammgr.action.SecurePlayerAction" name="PlayerForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/PlayerEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Points Actions -->
+		<action path="/Points" type="com.sns.teammgr.action.PointsAction" name="PointsForm" scope="request" validate="true" input="/WEB-INF/pages/PointsEdit.jsp">
+			<forward name="success" path="/PointsEdit.do"/>
+			<forward name="failure" path="/WEB-INF/pages/PointsEdit.jsp"/>
+		</action>
+		<action path="/PointsDelete" type="com.sns.teammgr.action.PointsDeleteAction" scope="request">
+			<forward name="success" path="/PointsFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PointsFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/PointsResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PointsList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/PointsResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/PointsEdit" type="com.sns.teammgr.action.SecurePointsAction" name="PointsForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/PointsEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Link Actions -->
+		<action path="/Link" type="com.sns.teammgr.action.LinkAction" name="LinkForm" scope="request" validate="true" input="/WEB-INF/pages/LinkEdit.jsp">
+			<forward name="success" path="/LinkEdit.do"/>
+			<forward name="failure" path="/WEB-INF/pages/LinkEdit.jsp"/>
+		</action>
+		<action path="/LinkDelete" type="com.sns.teammgr.action.LinkDeleteAction" scope="request">
+			<forward name="success" path="/LinkFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/LinkFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/LinkResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/LinkList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/LinkResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/LinkEdit" type="com.sns.teammgr.action.SecureLinkAction" name="LinkForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/LinkEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Comments Actions -->
+		<action path="/Comments" type="com.sns.teammgr.action.CommentsAction" name="CommentsForm" scope="request" validate="true" input="/WEB-INF/pages/CommentsEdit.jsp">
+			<forward name="success" path="/GameView.do"/>
+			<forward name="failure" path="/WEB-INF/pages/CommentsEdit.jsp"/>
+		</action>
+		<action path="/CommentsDelete" type="com.sns.teammgr.action.CommentsDeleteAction" scope="request">
+			<forward name="success" path="/CommentsFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/CommentsFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/CommentsResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/CommentsList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/CommentsResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/CommentsAdd" type="com.sns.teammgr.action.SecureCommentsAction" name="CommentsForm" scope="request" input="/WEB-INF/pages/CommentsEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/CommentsEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<!--Message Actions -->
+		<action path="/Message" type="com.sns.teammgr.action.MessageAction" name="MessageForm" scope="request" validate="true" input="/WEB-INF/pages/MessageEdit.jsp">
+			<forward name="success" path="/WEB-INF/pages/MessageEdit.jsp"/>
+			<forward name="admin" path="/AdminTeamView.do?id=-1"/>
+			<forward name="failure" path="/WEB-INF/pages/MessageEdit.jsp"/>
+		</action>
+		<action path="/MessageDelete" type="com.sns.teammgr.action.MessageDeleteAction" scope="request">
+			<forward name="success" path="/MessageFind.do"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/MessageFind" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/MessageResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/MessageList" type="com.sns.teammgr.action.SecureAction">
+			<forward name="success" path="/WEB-INF/pages/MessageResults.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+		<action path="/MessageEdit" type="com.sns.teammgr.action.SecureMessageAction" name="MessageForm" scope="request">
+			<forward name="success" path="/WEB-INF/pages/MessageEdit.jsp"/>
+			<forward name="failure" path="/MgrHome.do"/>
+		</action>
+	</action-mappings>
+	<message-resources parameter="com.sns.teammgr.ApplicationResources" />
+</struts-config>
+

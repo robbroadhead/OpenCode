@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by Rob Broadhead (RB Consulting Inc.) -->
+<!DOCTYPE database SYSTEM "http://db.apache.org/torque/dtd/database_3_3.dtd">
+<!-- ===========================================-->
+<!--   Torque Schema for scout database         -->
+<!-- ===========================================-->
+<database name="scout" defaultIdMethod="none">
+	<!-- Main Project/Issue tables -->
+	<table name="Project" description="Table for defining a project." idMethod="idbroker">
+		<column name="projectID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="50" type="VARCHAR" description="Name of the project."/>
+		<column name="startdate" required="true" type="DATE" description="Official start date of the project."/>
+		<column name="created" required="true" type="TIMESTAMP" description="Date and time that the project was entered into system."/>
+		<index name="project_name">
+			<index-column name="name"/>
+		</index>
+	</table>
+	<table name="Task" idMethod="idbroker" description="Table for tracking work to be done on a project.">
+		<column name="taskID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="projectID" required="true" type="INTEGER" description="The project this task is for."/>
+		<column name="created" required="true" type="TIMESTAMP" description="Datetime the task was created"/>
+		<column name="statusID" required="true" type="INTEGER" description="ID of the current status of this task."/>
+		<column name="typeID" required="true" type="INTEGER" description="ID of the type of this task."/>
+		<column default="" name="summary" required="true" size="80" type="VARCHAR"/>
+		<column default="" name="detail" required="true" size="2000" type="VARCHAR"/>
+		<foreign-key foreignTable="Project">
+			<reference local="projectID" foreign="projectID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpType">
+			<reference local="typeID" foreign="typeID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpStatus">
+			<reference local="statusID" foreign="statusID"/>
+		</foreign-key>
+	</table>
+	<table name="Users" idMethod="idbroker" description="Table for tracking application users.">
+		<column name="userID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="externalID" required="true" type="INTEGER" description="ID for this user in an external system."/>
+		<column name="created" required="true" type="TIMESTAMP" description="Datetime the task was created"/>
+		<column default="" name="firstname" required="true" size="40" type="VARCHAR"/>
+		<column default="" name="lastname" required="true" size="40" type="VARCHAR"/>
+		<column default="" name="displayname" required="true" size="80" type="VARCHAR"/>
+		<column default="" name="detail" required="true" size="250" type="VARCHAR"/>
+	</table>
+	<table name="Groups" idMethod="idbroker" description="Table for tracking application groups.">
+		<column name="groupID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="created" required="true" type="TIMESTAMP" description="Datetime the task was created"/>
+		<column default="" name="displayname" required="true" size="80" type="VARCHAR"/>
+		<column default="" name="detail" required="true" size="250" type="VARCHAR"/>
+	</table>
+	<table name="TaskEstimate" description="The types of tasks allowed." idMethod="idbroker">
+		<column name="estimateID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="taskID" required="true" type="INTEGER" description="The task this estimate is for."/>
+		<column name="priorityID" required="true" type="INTEGER"/>
+		<column name="startdate" required="true" type="DATE" description="When this is planned to start."/>
+		<column name="enddate" required="true" type="DATE" description="When this was completed."/>
+		<column name="timeValue" required="false" type="INTEGER"/>
+		<column name="measureID" required="false" type="INTEGER"/>
+		<column name="cost" required="false" type="INTEGER"/>
+		<foreign-key foreignTable="Task">
+			<reference local="taskID" foreign="taskID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpPriority">
+			<reference local="priorityID" foreign="priorityID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpMeasure">
+			<reference local="measureID" foreign="measureID"/>
+		</foreign-key>
+	</table>
+	<table name="TaskActual" description="The types of tasks allowed." idMethod="idbroker">
+		<column name="estimateID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="taskID" required="true" type="INTEGER" description="The task this estimate is for."/>
+		<column name="priorityID" required="true" type="INTEGER"/>
+		<column name="startdate" required="true" type="DATE" description="When this was started."/>
+		<column name="enddate" required="true" type="DATE" description="When this was completed."/>
+		<column name="timeValue" required="false" type="INTEGER"/>
+		<column name="measureID" required="false" type="INTEGER"/>
+		<column name="cost" required="false" type="INTEGER"/>
+		<foreign-key foreignTable="Task">
+			<reference local="taskID" foreign="taskID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpPriority">
+			<reference local="priorityID" foreign="priorityID"/>
+		</foreign-key>
+		<foreign-key foreignTable="lkpMeasure">
+			<reference local="measureID" foreign="measureID"/>
+		</foreign-key>
+	</table>
+	<table name="TaskNotes" description="A Note for a task." idMethod="idbroker">
+		<column name="noteID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="taskID" required="true" type="INTEGER" description="The task this estimate is for."/>
+		<column name="notedate" required="true" type="DATE" description="When this is planned to start."/>
+		<column name="detail" required="true" size="2000" type="VARCHAR"/>
+		<foreign-key foreignTable="Task">
+			<reference local="taskID" foreign="taskID"/>
+		</foreign-key>
+	</table>
+	<table name="TaskLinks" description="Task successors." idMethod="idbroker">
+		<column name="linkID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="firstID" required="true" type="INTEGER" description="The task that must be completed first."/>
+		<column name="nextID" required="true" type="INTEGER" description="The task that is bound to the first ID task."/>
+		<foreign-key foreignTable="Task">
+			<reference local="firstID" foreign="taskID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Task">
+			<reference local="nextID" foreign="taskID"/>
+		</foreign-key>
+	</table>
+	<!-- Lookup tables -->
+	<table name="lkpType" description="The types of tasks allowed." idMethod="idbroker">
+		<column name="typeID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="lkpMeasure" description="The types of tasks allowed." idMethod="idbroker">
+		<column name="measureID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="fraction" required="true" type="INTEGER" description="How many of these measures equals a workday. e.g. Hour would be 8"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="lkpStatus" description="The status of tasks allowed." idMethod="idbroker">
+		<column name="statusID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="lkpPriority" description="The priority of a task." idMethod="idbroker">
+		<column name="priorityID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="UserGroup" description="Tie users into a group." idMethod="idbroker">
+		<column name="userID" required="true" type="INTEGER" />
+		<column name="groupID" required="true" type="INTEGER" />
+		<foreign-key foreignTable="Groups">
+			<reference local="groupID" foreign="groupID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Users">
+			<reference local="userID" foreign="userID"/>
+		</foreign-key>
+	</table>
+	<table name="UserTask" description="Tie users to a task." idMethod="idbroker">
+		<column name="userID" required="true" type="INTEGER" />
+		<column name="taskID" required="true" type="INTEGER" />
+		<foreign-key foreignTable="Task">
+			<reference local="taskID" foreign="taskID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Users">
+			<reference local="userID" foreign="userID"/>
+		</foreign-key>
+	</table>	
+	<table name="UserProject" description="Tie users to a project." idMethod="idbroker">
+		<column name="userID" required="true" type="INTEGER" />
+		<column name="projectID" required="true" type="INTEGER" />
+		<foreign-key foreignTable="Project">
+			<reference local="projectID" foreign="projectID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Users">
+			<reference local="userID" foreign="userID"/>
+		</foreign-key>
+	</table>	
+	<table name="GroupProject" description="Tie users to a project." idMethod="idbroker">
+		<column name="groupID" required="true" type="INTEGER" />
+		<column name="projectID" required="true" type="INTEGER" />
+		<foreign-key foreignTable="Groups">
+			<reference local="groupID" foreign="groupID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Project">
+			<reference local="projectID" foreign="projectID"/>
+		</foreign-key>
+	</table>	
+	<table name="GroupTask" description="Tie users to a task." idMethod="idbroker">
+		<column name="groupID" required="true" type="INTEGER" />
+		<column name="taskID" required="true" type="INTEGER" />
+		<foreign-key foreignTable="Groups">
+			<reference local="groupID" foreign="groupID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Task">
+			<reference local="taskID" foreign="taskID"/>
+		</foreign-key>
+	</table>	
+</database>

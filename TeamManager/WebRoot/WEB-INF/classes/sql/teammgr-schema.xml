@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- edited with XML Spy v4.0.1 U (http://www.xmlspy.com) by Rob Broadhead (RB Consulting Inc.) -->
+<!DOCTYPE database SYSTEM "http://db.apache.org/torque/dtd/database_3_3.dtd">
+<!-- ===========================================-->
+<!--Torque Schema for teammgr database         -->
+<!-- ===========================================-->
+<database name="teammgr" defaultIdMethod="none">
+	<!-- Main tables -->
+	<table name="Team" description="Table for main team information." idMethod="idbroker">
+		<column name="teamID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="username" required="true" size="32" type="VARCHAR" description="Name for user to login."/>
+		<column default="" name="pwd" required="true" size="32" type="VARCHAR" description="Password for logging in."/>
+		<column default="" name="adminname" required="true" size="32" type="VARCHAR" description="Name for admin to login."/>
+		<column default="" name="adminpwd" required="true" size="32" type="VARCHAR" description="Password for admin logging in."/>
+		<column default="" name="coach" required="true" size="60" type="VARCHAR" description="Name for admin to login."/>
+		<column default="" name="phone" required="true" size="60" type="VARCHAR" description="Password for admin logging in."/>
+		<column default="" name="acoach" required="true" size="60" type="VARCHAR" description="Name for admin to login."/>
+		<column default="" name="aphone" required="true" size="60" type="VARCHAR" description="Password for admin logging in."/>
+		<column default="" name="teamname" required="true" size="40" type="VARCHAR" description="The team name."/>
+		<column default="" name="season" required="true" size="40" type="VARCHAR" description="Identifier string for the season for the team stats."/>
+		<column default="" name="primarycolor" required="true" size="10" type="VARCHAR" description="The primary color of the team."/>
+		<column default="" name="secondarycolor" required="true" size="10" type="VARCHAR" description="The secondarycolor of the team."/>
+		<column default="" name="piclogo" required="true" size="200" type="VARCHAR" description="Link to the picture or logo for the team."/>
+		<column name="teamtype" required="false" type="INTEGER" description="code for the type of team (sport) this is."/>
+	</table>
+	<table name="Player" description="Table for player information." idMethod="idbroker">
+		<column name="playerID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="teamID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="jerseynum" required="false" type="INTEGER"/>
+		<column name="position" required="false" type="INTEGER" />
+		<column default="" name="firstname" required="true" size="40" type="VARCHAR"/>
+		<column default="" name="lastname" required="true" size="40" type="VARCHAR"/>
+		<column default="" name="nickname" required="true" size="120" type="VARCHAR"/>
+		<column default="" name="email" required="true" size="150" type="VARCHAR"/>
+		<column default="" name="email2" required="true" size="150" type="VARCHAR"/>
+		<column default="" name="phone" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="phone2" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="parentnames" required="true" size="200" type="VARCHAR"/>
+		<foreign-key foreignTable="Team">
+			<reference local="teamID" foreign="teamID"/>
+		</foreign-key>
+	</table>
+	<table name="Event" description="Table for event information." idMethod="idbroker">
+		<column name="eventID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="teamID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="title" required="true" type="VARCHAR" size="40"/>
+		<column name="link" required="false" type="VARCHAR" size="100"/>
+		<column name="msg" required="true" type="VARCHAR" size="1000"/>
+		<column name="startdate" required="true" type="DATE"/>
+		<column name="enddate" required="true" type="DATE"/>
+		<foreign-key foreignTable="Team">
+			<reference local="teamID" foreign="teamID"/>
+		</foreign-key>
+		<index name="eventdate_idx">
+			<index-column name="startdate"></index-column>
+		</index>
+	</table>
+	<table name="Game" description="Table for game information." idMethod="idbroker">
+		<column name="gameID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="teamID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="goalieID" required="true" type="INTEGER" description="Goalie that gets the game result."/>
+		<column name="scoreus" required="false" type="INTEGER"/>
+		<column name="scorethem" required="false" type="INTEGER"/>
+		<column name="result" required="false" type="INTEGER" description="Did we win, lose, tie, ot loss this game."/>
+		<column name="opponent" required="true" type="VARCHAR" size="100"/>
+		<column name="summary" required="true" type="VARCHAR" size="250"/>
+		<column name="period1" required="true" type="VARCHAR" size="1000"/>
+		<column name="period2" required="true" type="VARCHAR" size="1000"/>
+		<column name="period3" required="true" type="VARCHAR" size="1000"/>
+		<column name="overtime" required="true" type="VARCHAR" size="1000"/>
+		<column name="highlight" required="true" type="VARCHAR" size="1000"/>
+		<column name="bottomline" required="true" type="VARCHAR" size="250"/>
+		<column name="star1" required="true" type="VARCHAR" size="500"/>
+		<column name="star2" required="true" type="VARCHAR" size="500"/>
+		<column name="star3" required="true" type="VARCHAR" size="500"/>
+		<foreign-key foreignTable="Player">
+			<reference local="goalieID" foreign="playerID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Team">
+			<reference local="teamID" foreign="teamID"/>
+		</foreign-key>
+	</table>
+	<table name="PlayerPoints" description="Table for player information." idMethod="none">
+		<column name="playerID" required="true" type="INTEGER"/>
+		<column name="gameID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="pointtype" required="false" type="INTEGER" description="3 for shots against,2 for a shutout,1 for goal and 0 for assist."/>
+		<foreign-key foreignTable="Player">
+			<reference local="playerID" foreign="playerID"/>
+		</foreign-key>
+		<foreign-key foreignTable="Game">
+			<reference local="gameID" foreign="gameID"/>
+		</foreign-key>
+	</table>
+	<table name="Link" description="Table for link information (docs, pics, etc)" idMethod="idbroker">
+		<column name="linkID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="teamID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="title" required="true" type="VARCHAR" size="40"/>
+		<column name="link" required="false" type="VARCHAR" size="250"/>
+		<foreign-key foreignTable="Team">
+			<reference local="teamID" foreign="teamID"/>
+		</foreign-key>
+	</table>
+	<table name="TeamMsg" description="Table for message information." idMethod="idbroker">
+		<column name="msgID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="teamID" required="true" type="INTEGER" description="ID for the related team."/>
+		<column name="title" required="true" type="VARCHAR" size="40"/>
+		<column name="link" required="false" type="VARCHAR" size="250"/>
+		<column name="msg" required="true" type="VARCHAR" size="2000"/>
+		<column name="expiredate" required="true" type="DATE"/>
+		<foreign-key foreignTable="Team">
+			<reference local="teamID" foreign="teamID"/>
+		</foreign-key>
+	</table>
+	<table name="GameComments" description="Table for comments on the game." idMethod="idbroker">
+		<column name="commentID" primaryKey="true" required="true" type="INTEGER"/>
+		<column name="gameID" required="true" type="INTEGER" description="ID for the related game."/>
+		<column name="msg" required="true" type="VARCHAR" size="500"/>
+		<foreign-key foreignTable="Game">
+			<reference local="gameID" foreign="gameID"/>
+		</foreign-key>
+	</table>
+	<!-- Lookup tables -->
+	<table name="lkpTeamType" description="The types of teams allowed." idMethod="none">
+		<column name="ID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="lkpPosition" description="Player Positions." idMethod="none">
+		<column name="ID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+	<table name="lkpResultType" description="Possible game results." idMethod="none">
+		<column name="ID" primaryKey="true" required="true" type="INTEGER"/>
+		<column default="" name="name" required="true" size="20" type="VARCHAR"/>
+		<column default="" name="description" required="true" size="50" type="VARCHAR"/>
+	</table>
+</database>

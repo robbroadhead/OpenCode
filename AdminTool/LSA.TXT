@@ -1,0 +1,93 @@
+Linux Administration Tool
+Version 1.5
+{ $Id: AdminTool.readme,v 1.3 1997/11/04 23:32:04 Rob Exp Rob $ }
+
+Usage/Installation:
+This only requires Perl 5.001 or greater to be installed and for the lsa file
+to be set to executable.  Copy the lsa file to either /usr/local/bin or 
+/usr/bin and type lsa to run the program.  If you are not allowed to execute
+lsa then type chmod +x lsa and your problems should be solved.  The lsa file
+is in Perl source and is commented to help with any adjustments you wish to
+make.
+
+Changes to the source:
+Although you are free to change the source you must note all changes made to
+the source and who made the changes if the file is distributed for other than
+personal use.  If you would like to see some extra functionality added or
+add some functionality that you feel would be an asset to the program then
+e-mail me at leftie@ibm.net so I can add it in to the general distribution.
+All contributors will be acknowledged along with their contributions. 
+
+Overview:
+This administration tool was written in Perl 5.001 for linux users, and
+administrators.  This is freeware and is aimed at easing the tasks of adding
+users, removing users, administering groups and other basic administration
+tasks.  Following is a list of the basic functions.  Most of these functions
+require the user to be root.
+
+There are two different main menus.  One is for root users and the other is
+for non-root users.  The menu for non-root users only allows the following
+functions: edit project, edit plan, List users, list groups, user information.
+
+List Users:
+This lists all of the users in the passwd file.  The login and user names are
+listed and allows the user to selct a login to display more information about.
+This function can be used by anyone unless the standard passwd file rights
+have been altered.
+
+List Groups:
+This lists all group names and ids.  This is another function that can be used
+by normal users.
+
+List Group Members:
+This lists the groups and asks the user to select a group.  It lists all
+members in the group and then searches the passwd file to find any users that
+are members of the group.
+
+Add a User:
+This just uses the standard adduser program
+
+Add a Group:
+This asks the user to enter information about a group and then adds it to the
+group file.
+
+Add Members to a Group:
+You can add groups or users.  No validation checks are made so be careful.
+
+Edit User Info:
+Allows you to edit a user's name, home directory, shell, login name, user id or
+group.  You will first need to select a current user.
+
+Remove User:
+Deletes a user from the passwd file and the shadow file if one exists.  Any
+files or directories that are owned by the user are chowned to a new user that
+you can select.
+
+Remove Group:
+Deletes a group from the group file and chgrps all of the group's files to a
+new group that you can select.
+
+Other Notes:
+Many functions create a backup of the passwd, shadow, and/or group files.  The
+backup is called passwd.bak,shadow.bak or group.bak and will be placed in the
+/etc directory.  Temporary files passwd.new, shadow.new and group.new will also
+be placed in the /etc directory.  If you have problems saving changes that have
+been made you can check the .new files to see the changes.
+The remove group/user functions build a list of all files that are chgrp or
+chown'ed this list is stored as temp.lst in the /tmp directory.
+
+This version does work with password shadow files and has only been tested in
+the final release version with Linux-Slakware 2.0.29.  It should work fine with
+other versions of Linux, but always make sure you back up your files before
+using a program like this.
+
+Future:
+Some future enhancements that are planned include:
+*A graphical interface as well as the text interface.
+*An environmental editor for common shells.
+*The ability to edit shadow file attributes.
+*Default user files and values.
+
+Rob Broadhead
+Leftie@ibm.net
+5-30-1997

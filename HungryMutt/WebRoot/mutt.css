@@ -1,0 +1,115 @@
+<STYLE TYPE="text/css">
+#head { position: absolute;
+		width: 800px;
+		top: 0px;
+		color:#A74992;
+}
+#printcontent { position: absolute;
+		top: 116px;
+		width: 700px;
+		left: 5px;
+}
+#printcontent TH { background-color: BLACK;
+		text-align:center;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 115%;
+        color: #FAF915;
+}
+#content { position: absolute;
+		top: 130px;
+		width: 635px;
+		left: 165px;
+}
+#content TH { background-color: #BEDFC4;
+		text-align:center;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 115%;
+		color:#A74992;
+}
+#report TH { background-color: #BEDFC4;
+		text-align:center;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 80%;
+        color: red;
+}
+#report TD { text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 65%;
+}
+#sidemenu { position: absolute;
+		top: 65px;
+		width: 150px;
+		background-color: #BEDFC4;
+}
+#sidemenu TH { font: 12px verdana, arial, sans-serif;
+			   color: #47720F;
+			   font-weight: bold;
+			   text-decoration: none;
+			   text-indent: 2px;
+			   background-color: white;
+			   text-align:left;
+			   font-size: 90%;
+}
+#sidemenu TD { font: 10px verdana, arial, sans-serif;
+               color: #AB003C;
+               font-weight: bold;
+               text-decoration: none;
+               text-indent: 10px;
+			   font-size: 90%;
+}
+#sidemenu A:visited { color: #AB003C;
+			          text-decoration: none;
+}
+#sidemenu A:hover { color: red;
+			          text-decoration: italic;
+}
+#sidemenu A { color: #AB003C;
+			  text-decoration: none;
+}
+#login TD { font: 10px verdana, arial, sans-serif;
+               font-weight: bold;
+               text-decoration: none;
+               text-indent: 10px;
+			   border-top: 0px solid black;
+			   border-left: 0px solid black;
+			   border-right: 0px solid black;
+			   border-bottom: 0px solid black;
+}
+BODY { background-color: #EBF4EA;
+  text-color: black; }
+A:hover { color: #cc0000; }
+H1 { color: black;
+     text-align: center;
+     font-family: verdana, arial, sans-serif;
+}
+H2 { color: black;
+     text-align: center;
+     font-family: verdana, arial, sans-serif;
+}
+H3 { color: black;
+     text-align: center;
+     font-family: verdana, arial, sans-serif;
+}
+UL { margin-top: 0;
+     border-top-width: 0;
+     padding-top: 0;
+}
+DT { font-weight: bold;
+}
+PRE { font-size: 105%;
+}
+CODE { font-size: 105%;
+}
+.TOC { font-size: 90%;
+       font-weight: bold;
+       font-family: verdana, arial, sans-serif;
+}
+TH.COLORED { background-color: #FFAD00;
+}
+TR.COLORED { background-color: #FFAD00;
+}
+TH.TITLE   { background-color: #EF8429;
+             font-size: 28px;
+             font-family: verdana, arial, sans-serif;
+}
+</STYLE>

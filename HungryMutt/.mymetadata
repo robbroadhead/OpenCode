@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="HungryMutt"
+  id="myeclipse.1102641507826"
+  context-root="/HungryMutt"
+  j2ee-spec="1.3"
+  archive="HungryMutt.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

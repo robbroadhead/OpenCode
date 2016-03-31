@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/TeamManager.do" location="50,50" dimension="258,88" />
+  <StrutsActivity path="/MgrHome.do" location="765,30" dimension="258,88" />
+  <StrutsActivity path="/Login.do" location="50,250" dimension="243,88" />
+  <StrutsActivity path="/Logout.do" location="450,30" dimension="247,88" />
+  <StrutsActivity path="/Team.do" location="650,250" dimension="230,88" />
+  <StrutsActivity path="/TeamAdd.do" location="1550,50" dimension="260,88" />
+  <StrutsActivity path="/TeamDelete.do" location="350,450" dimension="263,88" />
+  <StrutsActivity path="/TeamFind.do" location="950,450" dimension="237,88" />
+  <StrutsActivity path="/TeamList.do" location="50,550" dimension="237,88" />
+  <StrutsActivity path="/TeamEdit.do" location="350,650" dimension="265,88" />
+  <StrutsActivity path="/NewTeam.do" location="2150,1850" dimension="245,88" />
+  <StrutsActivity path="/PublicTeamView.do" location="2150,1050" dimension="270,88" />
+  <StrutsActivity path="/AdminTeamView.do" location="2150,1250" dimension="274,88" />
+  <StrutsActivity path="/MemberTeamView.do" location="2150,1650" dimension="274,88" />
+  <StrutsActivity path="/Game.do" location="950,650" dimension="231,88" />
+  <StrutsActivity path="/GameDelete.do" location="50,850" dimension="264,88" />
+  <StrutsActivity path="/GameFind.do" location="650,850" dimension="237,88" />
+  <StrutsActivity path="/GameList.do" location="950,850" dimension="237,88" />
+  <StrutsActivity path="/GameEdit.do" location="50,1050" dimension="266,88" />
+  <StrutsActivity path="/GameView.do" location="2150,250" dimension="275,88" />
+  <StrutsActivity path="/Event.do" location="1250,250" dimension="230,88" />
+  <StrutsActivity path="/EventDelete.do" location="1550,250" dimension="263,88" />
+  <StrutsActivity path="/EventFind.do" location="1250,450" dimension="237,88" />
+  <StrutsActivity path="/EventList.do" location="1550,450" dimension="237,88" />
+  <StrutsActivity path="/EventEdit.do" location="1850,450" dimension="265,88" />
+  <StrutsActivity path="/Player.do" location="1250,650" dimension="233,88" />
+  <StrutsActivity path="/PlayerDelete.do" location="1550,650" dimension="266,88" />
+  <StrutsActivity path="/PlayerFind.do" location="1250,850" dimension="237,88" />
+  <StrutsActivity path="/PlayerList.do" location="1550,850" dimension="237,88" />
+  <StrutsActivity path="/PlayerEdit.do" location="1850,850" dimension="268,88" />
+  <StrutsActivity path="/Points.do" location="1250,1050" dimension="234,88" />
+  <StrutsActivity path="/PointsDelete.do" location="1550,1050" dimension="267,88" />
+  <StrutsActivity path="/PointsFind.do" location="50,1250" dimension="237,88" />
+  <StrutsActivity path="/PointsList.do" location="350,1250" dimension="237,88" />
+  <StrutsActivity path="/PointsEdit.do" location="650,1250" dimension="269,88" />
+  <StrutsActivity path="/Link.do" location="1250,1250" dimension="223,88" />
+  <StrutsActivity path="/LinkDelete.do" location="1550,1250" dimension="256,88" />
+  <StrutsActivity path="/LinkFind.do" location="50,1450" dimension="237,88" />
+  <StrutsActivity path="/LinkList.do" location="350,1450" dimension="237,88" />
+  <StrutsActivity path="/LinkEdit.do" location="650,1450" dimension="258,88" />
+  <StrutsActivity path="/Comments.do" location="1250,1450" dimension="259,88" />
+  <StrutsActivity path="/CommentsDelete.do" location="1850,1450" dimension="292,88" />
+  <StrutsActivity path="/CommentsFind.do" location="50,1650" dimension="237,88" />
+  <StrutsActivity path="/CommentsList.do" location="350,1650" dimension="237,88" />
+  <StrutsActivity path="/CommentsAdd.do" location="1250,2150" dimension="303,88" />
+  <StrutsActivity path="/Message.do" location="1250,1650" dimension="247,88" />
+  <StrutsActivity path="/MessageDelete.do" location="1550,1650" dimension="280,88" />
+  <StrutsActivity path="/MessageFind.do" location="50,1850" dimension="237,88" />
+  <StrutsActivity path="/MessageList.do" location="350,1850" dimension="237,88" />
+  <StrutsActivity path="/MessageEdit.do" location="650,1850" dimension="282,88" />
+  <StrutsActivity path="teammgr;6" location="330,195" dimension="138,75" />
+  <StrutsActivity path="home;6" location="950,250" dimension="115,75" />
+  <StrutsActivity path="/WEB-INF/pages/ManagerLogin.jsp" location="60,435" dimension="220,49" />
+  <StrutsActivity path="/WEB-INF/pages/TeamEdit.jsp" location="650,1050" dimension="193,49" />
+  <StrutsActivity path="/WEB-INF/pages/TeamAdd.jsp" location="2150,650" dimension="195,49" />
+  <StrutsActivity path="/WEB-INF/pages/TeamResults.jsp" location="950,1050" dimension="212,49" />
+  <StrutsActivity path="/WEB-INF/pages/ExtTeamView.jsp" location="1250,1850" dimension="214,49" />
+  <StrutsActivity path="/WEB-INF/pages/AdminTeamView.jsp" location="1550,1850" dimension="232,49" />
+  <StrutsActivity path="/WEB-INF/pages/MemberTeamView.jsp" location="1850,1850" dimension="240,49" />
+  <StrutsActivity path="/WEB-INF/pages/GameEdit.jsp" location="650,1150" dimension="194,49" />
+  <StrutsActivity path="/WEB-INF/pages/GameResults.jsp" location="950,1150" dimension="213,49" />
+  <StrutsActivity path="/WEB-INF/pages/GameView.jsp" location="950,2150" dimension="198,49" />
+  <StrutsActivity path="/WEB-INF/pages/EventEdit.jsp" location="1250,1950" dimension="193,49" />
+  <StrutsActivity path="/WEB-INF/pages/EventResults.jsp" location="1550,1950" dimension="212,49" />
+  <StrutsActivity path="/WEB-INF/pages/PlayerEdit.jsp" location="1850,1950" dimension="196,49" />
+  <StrutsActivity path="/WEB-INF/pages/PlayerResults.jsp" location="50,2050" dimension="215,49" />
+  <StrutsActivity path="/WEB-INF/pages/PointsEdit.jsp" location="350,2050" dimension="197,49" />
+  <StrutsActivity path="/WEB-INF/pages/PointsResults.jsp" location="650,2050" dimension="216,49" />
+  <StrutsActivity path="/WEB-INF/pages/LinkEdit.jsp" location="950,2050" dimension="186,49" />
+  <StrutsActivity path="/WEB-INF/pages/LinkResults.jsp" location="1250,2050" dimension="205,49" />
+  <StrutsActivity path="/WEB-INF/pages/CommentsEdit.jsp" location="1550,2050" dimension="222,49" />
+  <StrutsActivity path="/WEB-INF/pages/CommentsResults.jsp" location="1850,2050" dimension="241,49" />
+  <StrutsActivity path="/WEB-INF/pages/MessageEdit.jsp" location="50,2150" dimension="210,49" />
+  <StrutsActivity path="/WEB-INF/pages/MessageResults.jsp" location="350,2150" dimension="229,49" />
+  <StrutsActivity path="/A" location="2150,2050" dimension="45,49" />
+  <StrutsActivity path="/" location="650,2150" dimension="37,49" />
+  <StrutsActivity path="/PublicGameView.do" />
+  <StrutsTransition id="/PlayerList.do,success,/WEB-INF/pages/PlayerResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="168,1294" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamAdd.do,success,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1810,74" />
+      <AbsolutePoint location="2133,74" />
+      <AbsolutePoint location="2133,1294" />
+      <AbsolutePoint location="2150,1294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/AdminTeamView.do,success,/WEB-INF/pages/AdminTeamView.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2287,1338" />
+      <AbsolutePoint location="2287,1583" />
+      <AbsolutePoint location="1524,1583" />
+      <AbsolutePoint location="1524,1874" />
+      <AbsolutePoint location="1550,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/CommentsEdit.jsp,null,/CommentsAdd.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1631,2099" />
+      <AbsolutePoint location="1631,2164" />
+      <AbsolutePoint location="1553,2164" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameFind.do,success,/WEB-INF/pages/GameResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="859,938" />
+      <AbsolutePoint location="859,1214" />
+      <AbsolutePoint location="1056,1214" />
+      <AbsolutePoint location="1056,1199" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Login.do,failure,/WEB-INF/pages/ManagerLogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="200,338" />
+      <AbsolutePoint location="200,435" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamDelete.do,success,/TeamFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="613,494" />
+      <AbsolutePoint location="950,494" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsFind.do,success,/WEB-INF/pages/CommentsResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Game.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1065,694" />
+      <AbsolutePoint location="2287,1294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="481,494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkEdit.do,success,/WEB-INF/pages/LinkEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/NewTeam.do,failure,/WEB-INF/pages/TeamAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2272,1894" />
+      <AbsolutePoint location="2247,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Message.do,success,/WEB-INF/pages/MessageEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1479,1738" />
+      <AbsolutePoint location="1479,2114" />
+      <AbsolutePoint location="155,2114" />
+      <AbsolutePoint location="155,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="482,694" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/PlayerEdit.jsp,null,/Player.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="468,1694" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="806,1250" />
+      <AbsolutePoint location="806,1214" />
+      <AbsolutePoint location="-235,1214" />
+      <AbsolutePoint location="-235,-45" />
+      <AbsolutePoint location="864,-45" />
+      <AbsolutePoint location="864,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Player.do,failure,/WEB-INF/pages/PlayerEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="teammgr;6,null,/TeamManager.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="399,195" />
+      <AbsolutePoint location="399,94" />
+      <AbsolutePoint location="308,94" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Game.do,success,/MemberTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1065,694" />
+      <AbsolutePoint location="2287,1694" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Link.do,failure,/WEB-INF/pages/LinkEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1668,494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsEdit.do,success,/WEB-INF/pages/PointsEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1068,894" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/ManagerLogin.jsp,null,/Login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="170,435" />
+      <AbsolutePoint location="170,338" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Login.do,success,/MemberTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,294" />
+      <AbsolutePoint location="-100,294" />
+      <AbsolutePoint location="-100,1413" />
+      <AbsolutePoint location="2257,1413" />
+      <AbsolutePoint location="2257,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/EventEdit.jsp,null,/Event.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="791,1938" />
+      <AbsolutePoint location="791,2014" />
+      <AbsolutePoint location="-145,2014" />
+      <AbsolutePoint location="-145,-105" />
+      <AbsolutePoint location="742,-105" />
+      <AbsolutePoint location="742,44" />
+      <AbsolutePoint location="765,44" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1668,850" />
+      <AbsolutePoint location="1668,813" />
+      <AbsolutePoint location="-175,813" />
+      <AbsolutePoint location="-175,164" />
+      <AbsolutePoint location="835,164" />
+      <AbsolutePoint location="835,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1368,850" />
+      <AbsolutePoint location="1368,783" />
+      <AbsolutePoint location="1232,783" />
+      <AbsolutePoint location="1232,164" />
+      <AbsolutePoint location="1007,164" />
+      <AbsolutePoint location="1007,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkFind.do,success,/WEB-INF/pages/LinkResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/CommentsEdit.jsp,null,/Comments.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PublicTeamView.do,success,/WEB-INF/pages/ExtTeamView.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2420,1094" />
+      <AbsolutePoint location="2499,1094" />
+      <AbsolutePoint location="2499,1783" />
+      <AbsolutePoint location="1357,1783" />
+      <AbsolutePoint location="1357,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MemberTeamView.do,success,/WEB-INF/pages/MemberTeamView.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1694" />
+      <AbsolutePoint location="1970,1694" />
+      <AbsolutePoint location="1970,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageList.do,success,/WEB-INF/pages/MessageResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1982,494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameView.do,success,/WEB-INF/pages/GameView.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageFind.do,success,/WEB-INF/pages/MessageResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/NewTeam.do,success,/WEB-INF/pages/TeamAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2272,1894" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Message.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1373,1650" />
+      <AbsolutePoint location="1373,1613" />
+      <AbsolutePoint location="2317,1613" />
+      <AbsolutePoint location="2317,1338" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PublicTeamView.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2420,1064" />
+      <AbsolutePoint location="2829,1064" />
+      <AbsolutePoint location="2829,-75" />
+      <AbsolutePoint location="894,-75" />
+      <AbsolutePoint location="894,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventDelete.do,success,/EventFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsFind.do,success,/WEB-INF/pages/PointsResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Team.do,success,/MemberTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,294" />
+      <AbsolutePoint location="2287,1694" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Points.do,success,/PointsEdit.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameList.do,success,/WEB-INF/pages/GameResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1187,924" />
+      <AbsolutePoint location="1232,924" />
+      <AbsolutePoint location="1232,1174" />
+      <AbsolutePoint location="1163,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsAdd.do,success,/WEB-INF/pages/CommentsEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1553,2194" />
+      <AbsolutePoint location="1661,2194" />
+      <AbsolutePoint location="1661,2099" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkDelete.do,success,/LinkFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Comments.do,failure,/WEB-INF/pages/CommentsEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameEdit.do,success,/WEB-INF/pages/GameEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="183,1138" />
+      <AbsolutePoint location="183,1174" />
+      <AbsolutePoint location="650,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/AdminTeamView.jsp,null,/AdminTeamView.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1666,1850" />
+      <AbsolutePoint location="1666,1813" />
+      <AbsolutePoint location="2739,1813" />
+      <AbsolutePoint location="2739,1264" />
+      <AbsolutePoint location="2424,1264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Team.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,294" />
+      <AbsolutePoint location="2287,1294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Points.do,failure,/WEB-INF/pages/PointsEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="182,894" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkList.do,success,/WEB-INF/pages/LinkResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/TeamAdd.jsp,null,/TeamAdd.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1680,94" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameDelete.do,success,/GameFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="314,894" />
+      <AbsolutePoint location="650,894" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerEdit.do,success,/WEB-INF/pages/PlayerEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,1894" />
+      <AbsolutePoint location="345,1894" />
+      <AbsolutePoint location="345,414" />
+      <AbsolutePoint location="543,414" />
+      <AbsolutePoint location="543,134" />
+      <AbsolutePoint location="865,134" />
+      <AbsolutePoint location="865,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Login.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="171,294" />
+      <AbsolutePoint location="2287,1294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="779,1450" />
+      <AbsolutePoint location="779,1353" />
+      <AbsolutePoint location="30,1353" />
+      <AbsolutePoint location="30,0" />
+      <AbsolutePoint location="774,0" />
+      <AbsolutePoint location="774,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1368,494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1690,1650" />
+      <AbsolutePoint location="1690,1353" />
+      <AbsolutePoint location="2769,1353" />
+      <AbsolutePoint location="2769,-105" />
+      <AbsolutePoint location="804,-105" />
+      <AbsolutePoint location="804,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Message.do,failure,/WEB-INF/pages/MessageEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1683,694" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Comments.do,success,/GameView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1373,1538" />
+      <AbsolutePoint location="1373,1553" />
+      <AbsolutePoint location="2859,1553" />
+      <AbsolutePoint location="2859,294" />
+      <AbsolutePoint location="2425,294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1080,450" />
+      <AbsolutePoint location="1080,104" />
+      <AbsolutePoint location="1023,104" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageEdit.do,success,/WEB-INF/pages/MessageEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamAdd.do,failure,/WEB-INF/pages/TeamEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1810,104" />
+      <AbsolutePoint location="1845,104" />
+      <AbsolutePoint location="1845,1013" />
+      <AbsolutePoint location="776,1013" />
+      <AbsolutePoint location="776,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="965,250" />
+      <AbsolutePoint location="965,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerFind.do,success,/WEB-INF/pages/PlayerResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageDelete.do,success,/MessageFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1678,1250" />
+      <AbsolutePoint location="1678,1174" />
+      <AbsolutePoint location="2589,1174" />
+      <AbsolutePoint location="2589,0" />
+      <AbsolutePoint location="954,0" />
+      <AbsolutePoint location="954,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1683,1050" />
+      <AbsolutePoint location="1683,983" />
+      <AbsolutePoint location="2469,983" />
+      <AbsolutePoint location="2469,-135" />
+      <AbsolutePoint location="924,-135" />
+      <AbsolutePoint location="924,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MessageFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1894" />
+      <AbsolutePoint location="-70,1894" />
+      <AbsolutePoint location="-70,-75" />
+      <AbsolutePoint location="834,-75" />
+      <AbsolutePoint location="834,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsAdd.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,2184" />
+      <AbsolutePoint location="1202,2184" />
+      <AbsolutePoint location="1202,210" />
+      <AbsolutePoint location="932,210" />
+      <AbsolutePoint location="932,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="468,1494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamFind.do,success,/WEB-INF/pages/TeamResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1187,494" />
+      <AbsolutePoint location="1262,494" />
+      <AbsolutePoint location="1262,1074" />
+      <AbsolutePoint location="1162,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LinkFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="168,1494" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2142,1494" />
+      <AbsolutePoint location="2679,1494" />
+      <AbsolutePoint location="2679,-45" />
+      <AbsolutePoint location="984,-45" />
+      <AbsolutePoint location="984,30" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,894" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsDelete.do,success,/CommentsFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Event.do,failure,/WEB-INF/pages/EventEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Game.do,failure,/WEB-INF/pages/GameEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,694" />
+      <AbsolutePoint location="902,694" />
+      <AbsolutePoint location="902,1174" />
+      <AbsolutePoint location="844,1174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Logout.do,success,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="697,74" />
+      <AbsolutePoint location="765,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventDelete.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1681,294" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/LinkEdit.jsp,null,/Link.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventFind.do,success,/WEB-INF/pages/EventResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="168,594" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Team.do,failure,/WEB-INF/pages/TeamEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="880,294" />
+      <AbsolutePoint location="932,294" />
+      <AbsolutePoint location="932,1074" />
+      <AbsolutePoint location="843,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventList.do,success,/WEB-INF/pages/EventResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="168,1694" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/GameEdit.jsp,null,/Game.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="747,1199" />
+      <AbsolutePoint location="747,1274" />
+      <AbsolutePoint location="1292,1274" />
+      <AbsolutePoint location="1292,694" />
+      <AbsolutePoint location="1181,694" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MemberTeamView.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2424,1694" />
+      <AbsolutePoint location="2529,1694" />
+      <AbsolutePoint location="2529,44" />
+      <AbsolutePoint location="1023,44" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsList.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="468,1294" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/TeamEdit.jsp,null,/Team.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1074" />
+      <AbsolutePoint location="630,1074" />
+      <AbsolutePoint location="630,324" />
+      <AbsolutePoint location="650,324" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Link.do,success,/LinkEdit.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamEdit.do,success,/WEB-INF/pages/TeamEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="482,738" />
+      <AbsolutePoint location="482,954" />
+      <AbsolutePoint location="746,954" />
+      <AbsolutePoint location="746,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/EventEdit.do,success,/WEB-INF/pages/EventEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TeamList.do,success,/WEB-INF/pages/TeamResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,624" />
+      <AbsolutePoint location="-25,624" />
+      <AbsolutePoint location="-25,983" />
+      <AbsolutePoint location="1056,983" />
+      <AbsolutePoint location="1056,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CommentsList.do,success,/WEB-INF/pages/CommentsResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameFind.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="768,894" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/MessageEdit.jsp,null,/Message.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsDelete.do,success,/PointsFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/AdminTeamView.jsp,null,/MemberTeamView.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1636,1850" />
+      <AbsolutePoint location="1636,1753" />
+      <AbsolutePoint location="2287,1753" />
+      <AbsolutePoint location="2287,1738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameView.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Event.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1480,294" />
+      <AbsolutePoint location="1524,294" />
+      <AbsolutePoint location="1524,1383" />
+      <AbsolutePoint location="2257,1383" />
+      <AbsolutePoint location="2257,1338" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PlayerDelete.do,success,/PlayerFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/PointsList.do,success,/WEB-INF/pages/PointsResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/AdminTeamView.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2424,1294" />
+      <AbsolutePoint location="2439,1294" />
+      <AbsolutePoint location="2439,74" />
+      <AbsolutePoint location="1023,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Player.do,success,/MemberTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1366,694" />
+      <AbsolutePoint location="2287,1694" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Player.do,admin,/AdminTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1366,694" />
+      <AbsolutePoint location="2287,1294" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Event.do,success,/MemberTeamView.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1365,338" />
+      <AbsolutePoint location="1365,384" />
+      <AbsolutePoint location="2649,384" />
+      <AbsolutePoint location="2649,1664" />
+      <AbsolutePoint location="2424,1664" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GameEdit.do,failure,/MgrHome.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="183,1094" />
+      <AbsolutePoint location="894,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/PointsEdit.jsp,null,/Points.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<data-sources/>
+	<form-beans>
+		<form-bean name="RecipeForm" type="com.hungrymutt.form.RecipeForm"/>
+		<form-bean name="RateForm" type="com.hungrymutt.form.RateForm"/>
+		<form-bean name="SearchForm" type="com.hungrymutt.form.SearchForm"/>
+		<form-bean name="AdvancedSearchForm" type="com.hungrymutt.form.AdvancedSearchForm"/>
+	</form-beans>
+	<global-exceptions/>
+	<global-forwards>
+		<!-- Default forward to "Welcome" action -->
+		<forward name="welcome" path="/Welcome.do"/>
+	</global-forwards>
+	<!-- =================================== Action Mapping Definitions -->
+	<action-mappings>
+		<!-- Default "Welcome" action -->
+		<action path="/Welcome" type="com.hungrymutt.action.RandomRecipeAction" name="RecipeForm" scope="request" validate="no">
+			<forward name="success" path="/jsp/Welcome.jsp"/>
+			<forward name="failure" path="/jsp/Welcome.jsp"/>
+		</action>
+		<!-- Menu Actions -->
+		<action path="/submitRecipe" type="org.apache.struts.actions.ForwardAction" parameter="/jsp/RecipeEdit.jsp"/>
+		<action path="/advancedSearch" type="org.apache.struts.actions.ForwardAction" parameter="/jsp/AdvancedSearch.jsp"/>
+
+		<action path="/saveRating" type="com.hungrymutt.action.SaveRatingAction" name="RateForm" scope="request" validate="true" input="/jsp/RateRecipe.jsp">
+			<forward name="success" path="/jsp/RateRecipe.jsp"/>
+			<forward name="failure" path="/jsp/RateRecipe.jsp"/>
+		</action>
+		<action path="/saveRecipe" type="com.hungrymutt.action.SaveRecipeAction" name="RecipeForm" scope="request" validate="true" input="/jsp/RecipeEdit.jsp">
+			<forward name="success" path="/jsp/RecipeEdit.jsp"/>
+			<forward name="failure" path="/jsp/RecipeEdit.jsp"/>
+		</action>
+   		<action path="/recipeSearch" type="com.hungrymutt.action.SearchAction" name="RecipeForm" scope="request" validate="no" input="/jsp/Welcome.jsp">
+			<forward name="success" path="/jsp/RecipeResults.jsp"/>
+			<forward name="failure" path="/jsp/Welcome.jsp"/>
+		</action>
+   		<action path="/recipeAdvancedSearch" type="com.hungrymutt.action.AdvancedSearchAction" name="SearchForm" scope="request" validate="no" input="/jsp/AdvancedSearch.jsp">
+			<forward name="success" path="/jsp/RecipeResults.jsp"/>
+			<forward name="failure" path="/jsp/AdvancedSearch.jsp"/>
+		</action>
+   		<action path="/viewRecipe" type="com.hungrymutt.action.EditRecipeAction" name="RecipeForm" scope="request" validate="no">
+			<forward name="success" path="/jsp/RecipeView.jsp"/>
+			<forward name="failure" path="/jsp/RecipeView.jsp"/>
+		</action>
+   		<action path="/rateRecipe" type="com.hungrymutt.action.RateRecipeAction" name="RateForm" scope="request" validate="no">
+			<forward name="success" path="/jsp/RateRecipe.jsp"/>
+			<forward name="failure" path="/jsp/RateRecipe.jsp"/>
+		</action>
+	</action-mappings>
+	<!-- ================================ Message Resources Definitions -->
+	<message-resources parameter="com.hungrymutt.ApplicationResources"/>
+</struts-config>

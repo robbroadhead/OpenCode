@@ -1,0 +1,132 @@
+<html {$html_attrs}>
+<head>
+<title>Register</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+<style>
+#center_block {width:50%;margin:0 auto;min-width:500px;}
+#contents_block {text-align:center;}
+#header_block {white-space:nowrap;height:25px;padding:0 10px 5px;text-align:center;}
+#fields_block {width:100%;margin:0;padding:10px}
+#header_block  span {margin:0 5px}
+#buttons_block {padding:10px 10px 5px}
+#buttons_block div {padding:3px}
+#delimiter {margin:2px}
+#fields_block td {padding:3px 14px}
+#username_block td {padding-top:13px;white-space:nowrap;}
+#remember_block td {padding-bottom:13px;white-space:nowrap;}
+</style>
+<!--[if IE]>
+<style>
+#main_block {width:100%}
+</style>
+<![endif]-->
+</head>
+<body>
+{BEGIN body}
+{$header}
+<table align=center id="center_block"><tr><td id="contents_block">
+<b class="xtop"><b class="xb1b"></b><b class="xb2b"></b><b class="xb3b"></b><b class="xb4b"></b></b>
+
+<div id="header_block" class="upeditmenu">
+<b><font size=+1>Register</font></b>
+</div>
+
+<div class="main_table_border2 loginshade" id="main_block">
+
+<table cellpadding=0 cellspacing=0 border=0 id="fields_block" class="loginshade">
+{BEGIN username_block}
+<tr id="username_block">
+	<td align=left width=50% class=loginshade> 
+		<div align="left">Login:</div>
+	</td>
+	<td width=50% class=loginshade>
+	{$Login_editcontrol}&nbsp;<img src="images/icon_required.gif">
+	<div class="error">{$user_msg}</div>
+	</td>
+</tr>
+{END username_block}
+{BEGIN password_block}
+<tr id="password_block">
+	<td align=left width=50% class=loginshade> 
+		<div align="left">Password:</div>
+	</td>
+	<td width=50% class=loginshade> 
+		<input type=password {$password_attrs}>&nbsp;<img src="images/icon_required.gif">
+		<div class="error">{$password_msg}</div>	
+	</td>
+</tr>
+{END password_block}
+{BEGIN confirm_block}
+<tr id="confirm_block">
+	<td align=left width=50% class=loginshade> 
+		<div align="left">Re-enter password:</div>
+	</td>
+	<td width=50%> 
+		<input type=password {$confirm_attrs}>&nbsp;<img src="images/icon_required.gif">
+		<div class="error">{$reenter_msg}</div>
+	</td>
+</tr>
+{END confirm_block}
+{BEGIN Email_fieldblock}
+<tr id="Email_fieldblock">
+	<td align=left width=50% class=loginshade> 
+		<div align="left">Email:</div>
+	</td>
+	<td width=50% class=loginshade> 
+		{$Email_editcontrol}
+    	
+				<div class="error">{$email_msg}</div>
+	</td>
+</tr>
+{END Email_fieldblock}
+{BEGIN DisplayName_fieldblock}
+<tr id="DisplayName_fieldblock">
+	<td align=left width=50% class=loginshade> 
+		<div align="left">Display Name:</div>
+	</td>
+	<td width=50% class=loginshade> 
+		{$DisplayName_editcontrol}
+    	
+			</td>
+</tr>
+{END DisplayName_fieldblock}
+<tr id="space_block"><td colspan=2 class=loginshade></td></tr>
+{BEGIN captcha_block}
+<tr id="captcha_block"> 
+	<td colspan=2 class=loginshade> 
+		{$captcha}
+		<div style="white-space:nowrap">Type the code you see above:</div>
+	<input name=captcha value="" type=text />
+	<div class="error">{$captcha_msg}</div>
+	</td>
+</tr>
+{END captcha_block}
+</table>
+
+{BEGIN buttons_block}
+<div id="buttons_block" class="downedit">
+	<div id="submit_block">
+	<span class=buttonborder><input type=submit value="Submit" class=button {$submit_attrs}></span>
+	</div>
+	{BEGIN message_block}
+	<div>
+	<font color=red>{$message}</font>
+	</div>
+	{END message_block}
+	<div>
+	<a href="login.php" class="toplinks">Back to login page</a>
+	</div>
+</div>
+{END buttons_block}
+
+</div>
+
+<b class="xbottom"><b class="xb4b"></b><b class="xb3b"></b><b class="xb2b"></b><b class="xb1b"></b></b>
+</td></tr></table>
+{$footer}
+{END body}
+</body>
+</html>

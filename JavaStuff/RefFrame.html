@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><!--JBuilder QuickDoc-->
+<HEAD>
+<TITLE>Class com.sns.Apps.Referee.ui.RefFrame</TITLE><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+
+<H2>
+<FONT SIZE="-1">com.sns.Apps.Referee.ui</FONT>
+<BR>Class RefFrame</H2>
+<DL>
+<DT>public class <B>RefFrame</B><DT>extends JFrame
+</DL>
+<DL><DD>The main program for the Referee application. It uses Data and FieldInfo.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Version:</B><DD>1.0 30-Apr-2001</DD>
+<DT><B>Author:</B><DD>Rob Broadhead</DD>
+<DT><B>See Also:</B><DD>com.sns.Apps.Referee.db.Data</DD>
+</DL>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Field Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>northPane</H3>
+<PRE>
+private JPanel <B>northPane</B></PRE>
+<DL><DD>contains the age and association fields<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>sleAssoc</H3>
+<PRE>
+private JTextField <B>sleAssoc</B></PRE>
+<DL><DD>Text field for interacting with the association.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>sleAge</H3>
+<PRE>
+private JTextField <B>sleAge</B></PRE>
+<DL><DD>Text field for interacting with the age.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>tblTable</H3>
+<PRE>
+private JTable <B>tblTable</B></PRE>
+<DL><DD>The table that is used to display game info.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>theDB</H3>
+<PRE>
+private DataManager <B>theDB</B></PRE>
+<DL><DD>The database we'll connect to for this frame.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>dbTable</H3>
+<PRE>
+private DataTableModel <B>dbTable</B></PRE>
+<DL><DD>The model to connect the database to the table.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>curRow</H3>
+<PRE>
+private int <B>curRow</B></PRE>
+<DL><DD>Keep up with the currently selected row instead of having to constantly go back and retrieve it from the table.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Constructor Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>RefFrame</H3>
+<PRE>
+public <B>RefFrame</B>()</PRE>
+<DL><DD>A constructor for the class. This takes no parameters and uses the data directory in the ini file to locate the database files.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>RefFrame</H3>
+<PRE>
+public <B>RefFrame</B>(boolean&nbsp;isNet,
+                String&nbsp;dbFile,
+                String&nbsp;parm)</PRE>
+<DL><DD>A constructor for the class. It takes parameters that determine whether the database is on a network or local and an ip address for network files.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>boolean</CODE> - isNet If this is true we are looking for a network DB.</DD>
+<DD><CODE>String</CODE> - parm This is the ip address for a net DB otherwise it is ignored.</DD>
+</DL>
+<HR>
+
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF"><TD COLSPAN=1><FONT SIZE="+2">
+<B>Method Detail</B>
+</FONT></TD></TR></TABLE>
+
+<H3>centerChild</H3>
+<PRE>
+private void <B>centerChild</B>(JFrame&nbsp;child)</PRE>
+<DL><DD>This takes a child frame and centers it within the main frame.<DL><DD></DD></DL></DD>
+</DL>
+<DL><DT><B>Parameters:</B><DD><CODE>JFrame</CODE> - child The frame to be centered.</DD>
+</DL>
+<HR>
+
+<H3>createMenu</H3>
+<PRE>
+private void <B>createMenu</B>()</PRE>
+<DL><DD>This creates all menus and menu items for the frame. This includes short cut keys and tool tips where needed. All listeners are also assigned in this method, so any menu changes will be done in this method.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>updateData</H3>
+<PRE>
+public void <B>updateData</B>(String[]&nbsp;vals,
+                       DataInfo&nbsp;theData)</PRE>
+<DL><DD>Update the given record with the data supplied.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>addData</H3>
+<PRE>
+public void <B>addData</B>(String[]&nbsp;vals)</PRE>
+<DL><DD>Add a game record to the database.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+<H3>createPanel</H3>
+<PRE>
+public void <B>createPanel</B>()</PRE>
+<DL><DD>Performs all of the data and graphical object creation and initialization for the frame.<DL><DD></DD></DL></DD>
+</DL>
+<DL></DL>
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,43 @@
+torque.project = security
+
+torque.database = mysql
+
+torque.targetPackage = com.sns.security.managers
+
+torque.addGetByNameMethod = true
+torque.addIntakeRetrievable = false
+torque.addSaveMethod = true
+torque.addTimeStamp = true
+torque.basePrefix = Base
+torque.complexObjectModel = true
+torque.useClasspath = false
+torque.useManagers = false
+torque.output.dir = /Users/robbroadhead/temp/security
+torque.templatePath = ./templates
+
+
+# -------------------------------------------------------------------
+#
+#  D A T A B A S E  S E T T I N G S
+#
+# -------------------------------------------------------------------
+# JDBC connection settings. This is used by the JDBCToXML task that
+# will create an XML database schema from JDBC metadata. These
+# settings are also used by the SQL Ant task to initialize your
+# Turbine system with the generated SQL.
+#
+# sameJavaName
+#   If true, the JDBC task will set the javaName attribute for the tables
+#   and columns to be the same as SQL name.
+# -------------------------------------------------------------------
+
+torque.database.createUrl = jdbc:mysql://localhost:3306/sns
+torque.database.buildUrl = jdbc:mysql://localhost:3306/sns
+torque.database.url = jdbc:mysql://localhost:3306/sns
+torque.database.driver = org.gjt.mm.mysql.Driver
+torque.database.user = secadmin
+torque.database.password = Tiasp4n
+torque.database.host = localhost
+torque.database.manualCreation = true
+
+torque.sameJavaName = false

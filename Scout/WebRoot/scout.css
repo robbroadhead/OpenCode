@@ -1,0 +1,211 @@
+<STYLE TYPE="text/css">
+#header { position: absolute;
+		width: 935px;
+		height: 40px;
+		top: 0px;
+		left: 0px;
+}
+#stats { position: absolute;
+	left: 0px;
+	top: 60px;
+	width: 125px;
+	border: 1px;
+	border-color: white;
+	overflow: auto;
+}
+#stats TH { font: 12px verdana, arial, sans-serif;
+			color: #FAF915;
+			font-weight: bold;
+			text-decoration: none;
+			text-indent: 2px;
+			background-color: #DDEEFF;
+			text-align:left;
+}
+#stats TD { color: yellow;
+}
+#ads { position: absolute;
+	left: 810px;
+	top: 60px;
+	width: 125px:
+}
+#printcontent { position: absolute;
+		top: 60px;
+		width: 700px;
+		left: 5px;
+}
+#printcontent TH { background-color: BLACK;
+		text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 115%;
+        color: #FAF915;
+}
+#content { position: absolute;
+		top: 60px;
+		overflow: none;
+		width: 669px;
+		left: 131px;
+}
+#content TH { text-align:center;
+		background-color: #330099;
+		color: white;
+		font-family: verdana, arial, sans-serif;
+	    font-size: 115%;
+}
+#content TD { text-align:center;
+	    font-family: verdana, arial, sans-serif;
+	    color: #330099;
+}
+#extcontent TD { 
+		color: white;
+}
+#report A:visited { color: blue;
+			          text-decoration: none;
+}
+#report A:hover { color: blue;
+}
+#contentreport TD.A { color: blue;
+			          text-decoration: none;
+}
+#contentreport TD.A:visited { color: blue;
+			          text-decoration: none;
+}
+#contentreport TD.A:hover { color: blue;
+}
+#contentreport TR.ODD { background-color: #DDDDDD;
+}
+#contentreport TR.EVEN { background-color: #AAAAAA;
+}
+#extcontent { position: absolute;
+		color:#FFFFFF;
+		top: 86px;
+		width: 763px;
+		overflow: auto;
+		left: 131px;
+}
+#extcontent TH { background-color: #003366;
+		text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 115%;
+        color: #FAF915;
+}
+#contentreport TH { background-color: #003366;
+		text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 95%;
+        color: WHITE;
+}
+#contentreport TD { text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 85%;
+}
+#report TH { background-color: #003366;
+		text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 95%;
+        color: WHITE;
+}
+#report TD { text-align:left;
+	    font-family: verdana, arial, sans-serif;
+	    font-size: 85%;
+}
+#sidemenu { position: absolute;
+		top: 60px;
+		width: 125px;
+}
+#sidemenu TH { font: 12px verdana, arial, sans-serif;
+			   font-weight: bold;
+			   text-decoration: none;
+			   text-indent: 2px;
+			   text-align:left;
+			   background-color: #330099;
+			   color: white;
+}
+#sidemenu TD { font: 10px verdana, arial, sans-serif;
+               color: #330099;
+               font-weight: bold;
+               text-decoration: none;
+               text-indent: 10px;
+}
+#sidemenu A:visited { color: #330099;
+			          text-decoration: none;
+}
+#sidemenu A:hover { color: #330099;
+			          text-decoration: italic;
+}
+#sidemenu A { color: #330099;
+			  text-decoration: none;
+}
+#exttopmenu { position: absolute;
+		top: 60px;
+		color: #FFFFFF;
+		height: 25px;
+		left: 131px;
+		width: 763px;
+}
+#exttopmenu TH { font: 12px verdana, arial, sans-serif;
+			   font-weight: bold;
+			   text-decoration: none;
+			   text-indent: 2px;
+			   color: white;
+}
+#topmenu { position: absolute;
+		top: 60px;
+		color: #DDDDDD;
+		height: 25px;
+		left: 131px;
+		width: 763px;
+}
+#submenu { position: absolute;
+		top: 86px;
+		left: 131px;
+		height: 29px;
+		width: 763px;
+		text-align: center;
+}
+#small { font-size: 85%;
+}
+#extsidemenu TD { font: 10px verdana, arial, sans-serif;
+               font-weight: bold;
+               text-decoration: none;
+               text-indent: 10px;
+			   border-left: 1px solid black;
+               border-top: 1px solid black;
+			   border-bottom: 1px solid black;
+}
+#login TD { font: 10px verdana, arial, sans-serif;
+               font-weight: bold;
+               text-decoration: none;
+               text-indent: 10px;
+			   border-top: 0px solid black;
+			   border-left: 0px solid black;
+			   border-right: 0px solid black;
+			   border-bottom: 0px solid black;
+}
+#submenu A:visited { color: black;
+			          text-decoration: none;
+}
+#submenu A:hover { color: red;
+}
+#submenu A { color: black;
+			  text-decoration: none;
+}
+#exttopmenu A:visited { color: black;
+			          text-decoration: none;
+}
+#exttopmenu A:hover { color: red;
+}
+#exttopmenu A { color: black;
+			  text-decoration: none;
+}
+#topmenu A:visited { color: black;
+			          text-decoration: none;
+}
+#topmenu A:hover { color: red;
+}
+#topmenu A { color: black;
+			  text-decoration: none;
+}
+BODY { background-color: #DDEEFF;
+  text-color: #330099; }
+A:hover { color: #cc0000; }
+</STYLE>

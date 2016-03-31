@@ -1,0 +1,11 @@
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (101, 'Team', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (102, 'Player', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (103, 'Event', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (104, 'Game', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (105, 'PlayerPoints', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (106, 'Link', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (107, 'TeamMsg', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (108, 'GameComments', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (109, 'lkpTeamType', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (110, 'lkpPosition', 1000, 10);
+insert into ID_TABLE (id_table_id, table_name, next_id, quantity) VALUES (111, 'lkpResultType', 1000, 10);

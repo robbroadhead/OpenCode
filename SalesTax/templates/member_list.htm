@@ -1,0 +1,225 @@
+<html {$html_attrs}>
+<head>
+<title>Member</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+<!--[if IE]>
+<link REL="stylesheet" href="include/styleIE.css" type="text/css">
+<![endif]-->
+{BEGIN style_block}
+<style>
+#height100{$id} {height:auto;padding:10px;}
+#search_block{$id} div {padding:5px 7px;}
+#global_block{$id} {padding:5px 12px;/*min-height:800px;*/ border: 1px solid #516C81;}
+#search_block_center{$id} {padding:3px 5px;text-align:center;}
+#center_block{$id} {text-align:center;padding:4px;}
+#center_block_caption{$id} {text-align:center;padding:4px;}
+#left_block{$id} { position:absolute;width:202px; left:20px; overflow:visible; margin-top:10px}
+#right_block{$id} { padding:10px 0px 0px 0px;}
+/*{BEGIN shiftstyle_block}*/
+#right_block{$id} { padding-left:220px;}
+/*{END shiftstyle_block}*/
+#toplinks_block{$id} {padding:0 5px 5px 5px;}
+#toplinks_block{$id} > * {margin:4px 6px;vertical-align:middle;}
+#menu_block{$id} {clear:left;padding:5px; width:auto;}
+#details_block{$id}, #pages_block{$id}, #records_pp_block{$id} {white-space:nowrap;padding:5px 7px;text-align:center;}
+#recordspp_block{$id} {padding:10px;}
+#recordcontrols_block{$id} {padding:13px 10px 9px 10px;text-align:left}
+#record_controls{$id} > *,#newrecord_controls{$id} > * {margin:2px 2px;vertical-align:middle}
+.menuitem {padding:6px 18px 10px 13px}
+.menuitem_active {padding:6px 18px 11px 13px}
+.message_block {text-align:center;}
+.grid_recordheader {padding:0 5px 5px}
+.grid_recordheader * {margin:0px 5px; vertical-align:middle}
+#grid_block{$id} {margin-top:10px;}
+.headerlist_right2 *,.headerlist * {vertical-align:middle}
+body{margin:0px;padding:0px;}
+</style>
+{END style_block}
+<!--[if IE]>
+{BEGIN iestyle_block}
+<style>
+#right_block{$id} { width:100%}
+#global_block{$id} {height:95%}
+</style>
+{END iestyle_block}
+<![endif]-->
+</head>
+<body marginheight=0 marginwidth=0 {$bodyattrs}>
+{BEGIN body}
+<div id="height100{$id}">
+{$header}
+<b class="xtop"><b class="xb1b"></b><b class="xb2b"></b><b class="xb3b"></b><b class="xb4b"></b></b>
+{BEGIN toplinks_block}
+<div id="toplinks_block{$id}" class="upeditmenu">
+<span><font style="FONT-FAMILY: Verdana, Arial;">Logged on as</font>&nbsp;<b>{$username}</b>&nbsp;</span>
+<span class=buttonborder><input type=button class=button value="Log out" {$logoutlink_attrs}></span>
+
+
+{BEGIN changepwd_link}
+<span class=buttonborder><input type=button class=button value="Change password" {$changepwdlink_attrs}></span>
+{END changepwd_link}
+
+
+
+
+
+</div>
+{END toplinks_block}
+<div class="main_table_border2 main_table" id="global_block{$id}">
+{BEGIN left_block}
+<div id="left_block{$id}" >
+    <b class="xtop"><b class="xb1b1"></b><b class="xb2b1"></b><b class="xb3b1"></b><b class="xb4b1"></b></b>
+	<!-- MenuBegin -->
+{BEGIN menu_block}
+<div class="menu_table" id="menu_block{$id}">
+<!-- MainMenuBegin -->
+{$mainmenu}
+<!-- MainMenuEnd -->
+</div>
+{END menu_block}
+		
+	<!-- MenuEnd -->	
+	{BEGIN search_records_block}
+	<div>
+                <div class="menu_table2">
+            {BEGIN recordspp_block}
+            <div class="menu_text blackshade" id="recordspp_block{$id}" >
+                Records Per Page:&nbsp;
+                <select {$recordspp_attrs}>
+                <option value="10" {$rpp10_selected}>10</option>
+                <option value="20" {$rpp20_selected}>20</option>
+                <option value="30" {$rpp30_selected}>30</option>
+                <option value="50" {$rpp50_selected}>50</option>
+                <option value="100" {$rpp100_selected}>100</option>
+                <option value="500" {$rpp500_selected}>500</option>
+                </select>
+            </div>
+            {END recordspp_block}
+        </div>
+	</div>
+	{END search_records_block}
+    </div>
+{END left_block}
+    <div id="right_block{$id}">
+        
+        
+        <div class=list_table1>
+        <div class=list_table>
+        
+        <div class=blackshade2 id="center_block_caption{$id}">
+        Member
+        </div>
+        {BEGIN recordcontrols_block}
+        <div class=blackshade id="recordcontrols_block{$id}">
+	        {BEGIN newrecord_controls}
+		<span id="newrecord_controls{$id}">
+                {BEGIN add_link}
+        <span class=buttonborder><input type=button class="button" value="Add new" {$addlink_attrs}></span>
+        {END add_link}
+
+                </span>
+		{END newrecord_controls}
+		
+		{$lookupSearchControls}
+		
+		{BEGIN record_controls}
+		<span id="record_controls{$id}">
+        
+        
+        
+        
+        		</span>
+		{END record_controls}
+        </div>
+        {END recordcontrols_block}
+<div>
+{BEGIN grid_block}
+<div id="grid_block{$id}">
+<table width="100%" name="maintable" border=0 cellpadding=3 cellspacing=0 class="data">
+{BEGIN grid_header}
+<tr valign="top" {$gridHeader_attrs}>
+{BEGIN record_header}
+<td class="headerlist">&nbsp;</td>
+
+{BEGIN edit_column}
+<td width=50 align="center" class="headerlist"><img src="include/img/icon_edit.gif"></td>
+{END edit_column}
+
+
+
+
+
+{BEGIN Tax_Summary_dtable_column}
+<td width=50 class="headerlist">&nbsp;</td>
+{END Tax_Summary_dtable_column}
+
+
+{BEGIN endrecordheader_block}
+<td class="table_right"></td>
+{END endrecordheader_block}
+{END record_header}
+</tr>
+{END grid_header}
+
+
+{BEGIN grid_row}
+<tr valign="top" {$rowstyle} {$rowattrs}>
+{BEGIN grid_record}
+
+<td>&nbsp;</td>
+
+{BEGIN edit_column}
+<td align="center" valign=middle>
+{BEGIN edit_link}
+<a class=tablelinks {$editlink_attrs}>Edit</a>
+{END edit_link}
+</td>
+{END edit_column}
+
+
+
+
+
+{BEGIN Tax_Summary_dtable_column}
+<td align="center" valign=middle class=borderbody>
+{BEGIN Tax_Summary_dtable_link}
+<a  {$Tax_Summary_dtablelink_attrs}>Tax Summary{BEGIN Tax_Summary_childcount}({$Tax_Summary_childnumber})
+{END Tax_Summary_childcount}
+</a>
+{END Tax_Summary_dtable_link}
+</td>
+{END Tax_Summary_dtable_column}
+
+
+{BEGIN endrecord_block}
+<td width=20 class=table_right {$endrecordblock_attrs}>&nbsp;</td>
+{END endrecord_block}
+{END grid_record}
+</tr>
+{END grid_row}
+	
+</table>
+</div>
+{END grid_block}
+</div>
+{BEGIN message_block}
+<div class="xboxcontentb message_block">
+{$message}
+</div>
+{END message_block}
+{BEGIN pagination_block}
+<div class="xboxcontentb message_block">
+{$pagination}
+</div>
+{END pagination_block}
+</div>
+</div>
+</div>
+</div>
+<b class="xbottom"><b class="xb4b"></b><b class="xb3b"></b><b class="xb2b"></b><b class="xb1b"></b></b>
+{$footer}
+</div>
+{END body}
+</body>
+</html>
+

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/Scout.do" location="-105,75" dimension="258,88" />
+  <StrutsActivity path="/ScoutMain.do" location="950,150" dimension="258,88" />
+  <StrutsActivity path="/Login.do" location="60,465" dimension="260,88" />
+  <StrutsActivity path="/Logout.do" location="50,250" dimension="264,88" />
+  <StrutsActivity path="/Project.do" location="950,350" dimension="263,88" />
+  <StrutsActivity path="/ProjectDelete.do" location="650,550" dimension="252,88" />
+  <StrutsActivity path="/ProjectFind.do" location="50,650" dimension="218,88" />
+  <StrutsActivity path="/ProjectEdit.do" location="350,750" dimension="255,88" />
+  <StrutsActivity path="/User.do" location="1250,750" dimension="251,88" />
+  <StrutsActivity path="/UserEdit.do" location="50,1550" dimension="287,88" />
+  <StrutsActivity path="/UserList.do" location="1250,1550" dimension="262,88" />
+  <StrutsActivity path="/Group.do" location="1250,950" dimension="260,88" />
+  <StrutsActivity path="/GroupEdit.do" location="650,1550" dimension="296,88" />
+  <StrutsActivity path="/GroupList.do" location="350,1750" dimension="262,88" />
+  <StrutsActivity path="/Task.do" location="50,950" dimension="251,88" />
+  <StrutsActivity path="/LTask.do" location="1250,550" dimension="251,88" />
+  <StrutsActivity path="/TaskDelete.do" location="650,950" dimension="284,88" />
+  <StrutsActivity path="/TaskFind.do" location="50,1150" dimension="262,88" />
+  <StrutsActivity path="/TaskList.do" location="950,1350" dimension="262,88" />
+  <StrutsActivity path="/TaskEdit.do" location="650,1150" dimension="287,88" />
+  <StrutsActivity path="scout;6" location="650,50" dimension="93,75" />
+  <StrutsActivity path="/WEB-INF/pages/ScoutHome.jsp" location="420,420" dimension="205,49" />
+  <StrutsActivity path="/WEB-INF/pages/ProjectEdit.jsp" location="350,650" dimension="201,49" />
+  <StrutsActivity path="/WEB-INF/pages/ProjectResults.jsp" location="950,850" dimension="220,49" />
+  <StrutsActivity path="/WEB-INF/pages/UserEdit.jsp" location="1250,1250" dimension="189,49" />
+  <StrutsActivity path="/WEB-INF/pages/UserResults.jsp" location="50,1750" dimension="208,49" />
+  <StrutsActivity path="/WEB-INF/pages/GroupEdit.jsp" location="350,1450" dimension="198,49" />
+  <StrutsActivity path="/WEB-INF/pages/GroupResults.jsp" location="950,1750" dimension="217,49" />
+  <StrutsActivity path="/WEB-INF/pages/TaskEdit.jsp" location="50,1350" dimension="189,49" />
+  <StrutsActivity path="/WEB-INF/pages/TaskResults.jsp" location="650,1350" dimension="208,49" />
+  <StrutsActivity path="/WEB-INF/pages/MyTaskResults.jsp" location="50,1450" dimension="223,49" />
+  <StrutsActivity path="/pages/ProjectEdit.jsp" location="950,750" dimension="151,49" />
+  <StrutsActivity path="/pages/TaskEdit.jsp" location="350,1350" dimension="139,49" />
+  <StrutsActivity path="/pages/ProjectResults.jsp" location="50,850" dimension="170,49" />
+  <StrutsActivity path="/pages/ScoutHome.jsp" location="650,250" dimension="155,49" />
+  <StrutsActivity path="/ProjectStats.do" />
+  <StrutsActivity path="/WEB-INF/pages/ProjectStats.jsp" />
+  <StrutsTransition id="/ProjectDelete.do,success,/ProjectFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,624" />
+      <AbsolutePoint location="159,624" />
+      <AbsolutePoint location="159,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Login.do,failure,/WEB-INF/pages/ScoutHome.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="190,465" />
+      <AbsolutePoint location="190,444" />
+      <AbsolutePoint location="420,444" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GroupList.do,success,/WEB-INF/pages/GroupResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="612,1784" />
+      <AbsolutePoint location="950,1784" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GroupList.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="612,1814" />
+      <AbsolutePoint location="1228,1814" />
+      <AbsolutePoint location="1228,-150" />
+      <AbsolutePoint location="60,-150" />
+      <AbsolutePoint location="60,75" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LTask.do,success,/TaskList.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,594" />
+      <AbsolutePoint location="1185,594" />
+      <AbsolutePoint location="1185,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/UserEdit.do,success,/WEB-INF/pages/UserEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="288,1550" />
+      <AbsolutePoint location="288,1274" />
+      <AbsolutePoint location="1250,1274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskFind.do,success,/WEB-INF/pages/TaskResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectDelete.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,594" />
+      <AbsolutePoint location="30,594" />
+      <AbsolutePoint location="30,163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskDelete.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="917,950" />
+      <AbsolutePoint location="917,140" />
+      <AbsolutePoint location="153,140" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Group.do,success,/ScoutMain.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1079,194" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskList.do,success,/WEB-INF/pages/MyTaskResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1081,1438" />
+      <AbsolutePoint location="1081,1474" />
+      <AbsolutePoint location="273,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GroupEdit.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="24,119" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/TaskEdit.jsp,null,/TaskEdit.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,1374" />
+      <AbsolutePoint location="793,1194" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/UserEdit.jsp,null,/User.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/User.do,success,/ScoutMain.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1079,194" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/UserEdit.jsp,null,/UserEdit.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1344,1299" />
+      <AbsolutePoint location="1344,1514" />
+      <AbsolutePoint location="335,1514" />
+      <AbsolutePoint location="335,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/GroupEdit.do,success,/WEB-INF/pages/GroupEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="449,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskEdit.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="793,1150" />
+      <AbsolutePoint location="793,1083" />
+      <AbsolutePoint location="-240,1083" />
+      <AbsolutePoint location="-240,89" />
+      <AbsolutePoint location="-105,89" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Task.do,failure,/WEB-INF/pages/TaskEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskEdit.do,success,/WEB-INF/pages/TaskEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/GroupEdit.jsp,null,/Group.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="scout;6,null,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,90" />
+      <AbsolutePoint location="153,90" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/UserList.do,success,/WEB-INF/pages/UserResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1381,1638" />
+      <AbsolutePoint location="1381,1913" />
+      <AbsolutePoint location="154,1913" />
+      <AbsolutePoint location="154,1799" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskFind.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1194" />
+      <AbsolutePoint location="-180,1194" />
+      <AbsolutePoint location="-180,119" />
+      <AbsolutePoint location="-105,119" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectStats.do,success,/WEB-INF/pages/ProjectStats.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/TaskEdit.jsp,null,/Task.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="144,1374" />
+      <AbsolutePoint location="175,994" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectFind.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,694" />
+      <AbsolutePoint location="-55,694" />
+      <AbsolutePoint location="-55,163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/LTask.do,failure,/WEB-INF/pages/TaskEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1501,594" />
+      <AbsolutePoint location="1585,594" />
+      <AbsolutePoint location="1585,1314" />
+      <AbsolutePoint location="144,1314" />
+      <AbsolutePoint location="144,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/UserEdit.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1594" />
+      <AbsolutePoint location="-315,1594" />
+      <AbsolutePoint location="-315,224" />
+      <AbsolutePoint location="65,224" />
+      <AbsolutePoint location="65,163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectEdit.do,success,/WEB-INF/pages/ProjectEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="477,750" />
+      <AbsolutePoint location="477,699" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/ProjectEdit.jsp,null,/Project.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="450,674" />
+      <AbsolutePoint location="1081,394" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/UserList.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1512,1594" />
+      <AbsolutePoint location="1675,1594" />
+      <AbsolutePoint location="1675,-75" />
+      <AbsolutePoint location="30,-75" />
+      <AbsolutePoint location="30,75" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Project.do,success,/ScoutMain.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1081,350" />
+      <AbsolutePoint location="1081,238" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/User.do,failure,/WEB-INF/pages/UserEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Logout.do,success,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="138,250" />
+      <AbsolutePoint location="138,163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Login.do,success,/ScoutMain.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="60,509" />
+      <AbsolutePoint location="-25,509" />
+      <AbsolutePoint location="-25,194" />
+      <AbsolutePoint location="950,194" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectEdit.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,794" />
+      <AbsolutePoint location="-85,794" />
+      <AbsolutePoint location="-85,163" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Group.do,failure,/WEB-INF/pages/GroupEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/TaskEdit.jsp,null,/LTask.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="239,1374" />
+      <AbsolutePoint location="335,1374" />
+      <AbsolutePoint location="335,714" />
+      <AbsolutePoint location="1375,714" />
+      <AbsolutePoint location="1375,638" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/ScoutHome.jsp,null,/Login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="522,469" />
+      <AbsolutePoint location="522,509" />
+      <AbsolutePoint location="320,509" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectStats.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="24,119" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskDelete.do,success,/TaskFind.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Task.do,success,/ProjectEdit.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="175,994" />
+      <AbsolutePoint location="477,794" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/ProjectFind.do,success,/WEB-INF/pages/ProjectResults.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="235,738" />
+      <AbsolutePoint location="235,874" />
+      <AbsolutePoint location="950,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Project.do,failure,/WEB-INF/pages/ProjectEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1081,394" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/TaskList.do,failure,/Scout.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,1414" />
+      <AbsolutePoint location="-150,1414" />
+      <AbsolutePoint location="-150,149" />
+      <AbsolutePoint location="-105,149" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/GroupEdit.jsp,null,/GroupEdit.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="449,1474" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/pages/ProjectEdit.jsp,null,/ProjectEdit.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="450,674" />
+      <AbsolutePoint location="477,794" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
