@@ -21,7 +21,7 @@ public class GmailViewMain {
 
     if ((args.length > 0 ) && (args[0].equals("-?"))) {
        /* Let the user know how to use the app */
-       System.out.println("--> Gmail Viewer version 1.0 ---");
+       System.out.println("--> Gmail Viewer version 1.1 ---");
        System.out.println("--> written by: Rob Broadhead");
        System.out.println("Purpose: View Gmail mails and search.");
        System.out.println("Usage: java GmailViewMain [-?] [path]");
